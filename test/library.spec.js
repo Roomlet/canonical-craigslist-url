@@ -1,32 +1,27 @@
 /* global describe, it, before */
 
 import chai from 'chai';
-import {Cat, Dog} from '../lib/library.js';
+import {canonicalCL} from '../lib/library.js';
 
 chai.expect();
 
 const expect = chai.expect;
 
-let lib;
+describe('canonicalURL', () => {
+  it('should return a valid shortCL URL when given a valid long CL URL', () => {
+    const canonicalURL =
+      canonicalCL('https://seattle.craigslist.org/est/cto/d/see-and-leave-reviews-on-cl/6408661519.html');
 
-describe('Given an instance of my Cat library', () => {
-  before(() => {
-    lib = new Cat();
+    expect(canonicalURL).to.be.equal('https://seattle.craigslist.org/est/cto/6408661519.html');
   });
-  describe('when I need the name', () => {
-    it('should return the name', () => {
-      expect(lib.name).to.be.equal('Cat');
-    });
-  });
-});
+  it('should return a valid shortCL URL when given a valid short CL URL', () => {
+    const canonicalURL = canonicalCL('https://seattle.craigslist.org/est/cto/6408661519.html');
 
-describe('Given an instance of my Dog library', () => {
-  before(() => {
-    lib = new Dog();
+    expect(canonicalURL).to.be.equal('https://seattle.craigslist.org/est/cto/6408661519.html');
   });
-  describe('when I need the name', () => {
-    it('should return the name', () => {
-      expect(lib.name).to.be.equal('Dog');
-    });
+  it('should return null when given a non-craigslist URL', () => {
+    const url = canonicalCL('https://test.com/est/cto/6408661519.html');
+
+    expect(url).to.be.equal(null);
   });
 });
