@@ -1,6 +1,6 @@
 {
   "name": "canonical-craigslist-url",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "returns a consistent cragislist url format",
   "main": "lib/library.js",
   "scripts": {
