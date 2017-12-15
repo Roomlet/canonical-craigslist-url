@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Roomlet/canonical-craigslist-url.git"
+    "url": "git+https://github.com/Roomlet/canonical-craigslist-url.git"
   },
   "keywords": [
     "webpack",
@@ -23,11 +23,8 @@
     "commonjs"
   ],
   "author": "Joyce Wu",
-  "license": "MIT",
-  "bugs": {
-    "url": ""
-  },
-  "homepage": "",
+  "license": "ISC",
+  "homepage": "https://github.com/Roomlet/canonical-craigslist-url#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -41,5 +38,13 @@
     "mocha": "^4.0.1",
     "webpack": "^3.8.1",
     "yargs": "^10.0.3"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {},
+  "bugs": {
+    "url": "https://github.com/Roomlet/canonical-craigslist-url/issues"
   }
 }
